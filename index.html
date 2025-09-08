@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stevens Remodeling - Professional Home Remodeling Services in San Antonio</title>
+    <meta name="description" content="Stevens Remodeling provides professional home renovation services in San Antonio. Free estimates on bathroom, kitchen remodels, electrical, plumbing, painting and more.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #000000 0%, #0066cc 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 102, 204, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0099ff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: #0066cc;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 102, 204, 0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect width="1200" height="600" fill="%23000"/><path d="M0 300L100 250L200 350L300 200L400 300L500 150L600 280L700 180L800 320L900 220L1000 300L1100 250L1200 300V600H0V300Z" fill="%230066cc" opacity="0.3"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #0099ff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #0066cc, #0099ff);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.6);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            margin-top: 2rem;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #0099ff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            border-radius: 20px;
+            margin: 2rem 0;
+            padding: 3rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+        }
+
+        .about-features {
+            background: linear-gradient(45deg, #0066cc, #0099ff);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .feature-item {
+            margin: 1rem 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #0066cc;
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+        }
+
+        .service-card h3 {
+            color: #0099ff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #0066cc;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: #333;
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0099ff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px dashed #0066cc;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            border-color: #0099ff;
+        }
+
+        .upload-area {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(45deg, #0066cc, #0099ff);
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .upload-instructions {
+            background: #333;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 4px solid #0066cc;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #ffffff;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 3px solid #0066cc;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Stevens Remodeling</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Home</h1>
+                <p>Professional remodeling services in San Antonio with quality craftsmanship and exceptional customer service. Your dream home awaits!</p>
+                <a href="#contact" class="cta-button">Get Free Estimate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Stevens Remodeling</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 style="color: #0099ff; margin-bottom: 1rem;">Your Trusted San Antonio Remodeling Partner</h3>
+                    <p>At Stevens Remodeling, we bring over years of experience in transforming homes throughout San Antonio. Led by Steven Short, our dedicated team combines traditional craftsmanship with modern techniques to deliver exceptional results.</p>
+                    <br>
+                    <p>We understand that your home is your sanctuary, and every project we undertake reflects our commitment to quality, reliability, and customer satisfaction. From small repairs to complete home renovations, we treat every job with the same level of care and attention to detail.</p>
+                </div>
+                <div class="about-features">
+                    <h3 style="margin-bottom: 1.5rem;">Why Choose Us?</h3>
+                    <div class="feature-item">✓ Licensed & Insured</div>
+                    <div class="feature-item">✓ Free Estimates</div>
+                    <div class="feature-item">✓ Quality Craftsmanship</div>
+                    <div class="feature-item">✓ Competitive Pricing</div>
+                    <div class="feature-item">✓ Local San Antonio Business</div>
+                    <div class="feature-item">✓ Customer Satisfaction Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛁</div>
+                    <h3>Bathroom Remodels</h3>
+                    <p>Complete bathroom renovations including vanities, sinks, toilets, and custom tile work. Transform your bathroom into a luxurious retreat.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🍳</div>
+                    <h3>Kitchen Remodels</h3>
+                    <p>Custom kitchen renovations with modern appliances, countertops, cabinets, and innovative storage solutions for your culinary needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Electrical Services</h3>
+                    <p>Professional electrical work including ceiling fans, switches, plugs, and lighting installations. Safe and code-compliant solutions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Plumbing</h3>
+                    <p>Expert plumbing services for sinks, toilets, vanities, and complete plumbing system installations and repairs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Painting</h3>
+                    <p>Interior and exterior painting services with premium paints and finishes. Professional color consultation available.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚪</div>
+                    <h3>Doors, Windows & Trims</h3>
+                    <p>Installation and replacement of doors, windows, and custom trim work to enhance your home's aesthetic and functionality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Our Work Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kitchen1.jpeg" alt="Kitchen Remodeling Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="gallery-item">Kitchen Transformations</div>
+                <div class="gallery-item">Bathroom Renovations</div>
+                <div class="gallery-item">Electrical Installations</div>
+                <div class="gallery-item">Painting Projects</div>
+                <div class="gallery-item">Custom Trim Work</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 style="color: white;">Get Your Free Estimate Today</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 2rem;">Contact Information</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">👨‍💼</span>
+                        <div>
+                            <strong>Steven Short, CEO</strong><br>
+                            Stevens Remodeling
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Phone:</strong><br>
+                            <a href="tel:8303999084" style="color: white; text-decoration: none;">(830) 399-9084</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:stevenshortremodelling@gmail.com" style="color: white; text-decoration: none;">stevenshortremodelling@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Service Area:</strong><br>
+                            San Antonio, Texas
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💰</span>
+                        <div>
+                            <strong>Free Estimates Available</strong><br>
+                            Call today for your consultation
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 2rem;">Service Hours</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕐</span>
+                        <div>
+                            <strong>Monday - Friday:</strong><br>
+                            8:00 AM - 6:00 PM
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕐</span>
+                        <div>
+                            <strong>Saturday:</strong><br>
+                            9:00 AM - 4:00 PM
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕐</span>
+                        <div>
+                            <strong>Sunday:</strong><br>
+                            Emergency Calls Only
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <strong>Ready to get started?</strong><br>
+                        Contact us today for a free, no-obligation estimate on your next home improvement project!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Stevens Remodeling. All rights reserved. | Professional Home Remodeling Services in San Antonio, Texas</p>
+            <p style="margin-top: 0.5rem; color: #0099ff;">Licensed, Insured & Committed to Excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Mobile menu toggle (if needed for smaller screens)
+        const nav = document.querySelector('.nav-links');
+        const burger = document.createElement('div');
+        burger.className = 'burger';
+        burger.innerHTML = '☰';
+        burger.style.cssText = 'display: none; font-size: 1.5rem; cursor: pointer; color: white;';
+        
+        document.querySelector('nav').appendChild(burger);
+        
+        function checkScreenSize() {
+            if (window.innerWidth <= 768) {
+                burger.style.display = 'block';
+                nav.style.display = 'none';
+            } else {
+                burger.style.display = 'none';
+                nav.style.display = 'flex';
+            }
+        }
+        
+        burger.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
+        });
+        
+        window.addEventListener('resize', checkScreenSize);
+        checkScreenSize();
+    </script>
+</body>
+</html>
